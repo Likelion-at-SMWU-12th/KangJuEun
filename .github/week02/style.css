@@ -66,3 +66,6 @@ a, h1, h2 {
     font-family: "Cherry Cream Soda", system-ui;
 }
 
+.major {
+    font-weight: bold;
+}
