@@ -10,4 +10,4 @@ function lightmode() {
     h2.style.backgroundColor = 'cornsilk';
 }
 
-alert("Welcome to juen info page~!~!~!");
+confirm("juen의 info page 입니다..");
