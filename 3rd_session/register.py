@@ -20,6 +20,7 @@ while True:
         exit()
     else:
         print("'y' 또는 'n'을 입력해주세요.  ")
+        print("d")
 
 #2
 
