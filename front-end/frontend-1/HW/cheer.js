@@ -1,3 +1,6 @@
+justforfun = prompt("많이 힘드신가요?");
+console.log(justforfun);
+
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const cheer = document.querySelector("#cheer");
@@ -11,3 +14,4 @@ function loginSubmit(event){
 }
 
 loginForm.addEventListener("submit", loginSubmit);
+
