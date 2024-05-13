@@ -1,13 +1,13 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-const greeting = document.querySelector("#greeting");
+const cheer = document.querySelector("#cheer");
 
 function loginSubmit(event){
     event.preventDefault();
     loginForm.classList.add("hidden");
     const userName = loginInput.value;
-    greeting.innerText = `Hello ${userName} !`;
-    greeting.classList.remove("hidden");
+    cheer.innerText = `화이팅 ${userName} !`;
+    cheer.classList.remove("hidden");
 }
 
 loginForm.addEventListener("submit", loginSubmit);
