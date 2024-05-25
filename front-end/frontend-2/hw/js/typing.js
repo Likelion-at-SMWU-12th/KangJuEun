@@ -1,7 +1,7 @@
 let target = document.querySelector("#dynamic");
 
 function randomString(){
-    let stringArr = ["안녕하세요👋", "반갑습니다🙌", "행복하세요💛", "행운 가득하길🍀"];
+    let stringArr = ["좋은 하루 되세요👋", "로또 당첨 기원🙌", "행복하세요💛", "행운 가득하길🍀"];
     let selectString = stringArr[Math.floor(Math.random()* stringArr.length)];
     let selectStringArr = selectString.split("");
 

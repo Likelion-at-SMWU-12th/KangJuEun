@@ -1,7 +1,9 @@
 .lg-text{
-    font-size: 1rem;
+    font-size: 30px;
     font-weight: bold;
-    margin-top: 15px;
+    background: rgb(0, 0, 0);
+    color: whitesmoke;
+
 }
 
 #dynamic {
@@ -22,15 +24,60 @@
     display: none;
 }
 
-.list {
-
+.one {
+    margin: auto;
+    place-content: center;
+    text-align: center;
 }
 
-hr { 
-    color: orange;
-    height: 8px;
-    border-width: 0 0 8px;
-    border-style: solid;
-    border-style: dotted;
-    width: 200px;
+.time {
+    float: left;
+    place-content: center;
+    margin: 50px 25px 50px 25px;
+    background: salmon;
+    padding: 30px;
+    border-radius: 30px;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.3)
+}
+
+.input {
+    float: left;
+    place-content: center;
+    text-align: center;
+    margin: 50px 25px 50px 25px;
+    background: rgb(255, 242, 180);
+    padding: 30px;
+    border-radius: 30px;
+    width: 300px;
+    text-align: center;
+    height: 300px;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.3)
+}
+
+.list {
+    float: left;
+    text-align: center;
+    margin: 50px 25px 50px 25px;
+    background: rgb(210, 241, 170);
+    padding: 30px;
+    border-radius: 30px;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.3)
+}
+
+.greeting {
+    float: left;
+    margin: 50px 25px 50px 25px;
+    background: rgb(167, 255, 226);
+    padding: 30px;
+    width: 300px;
+    height: 300px;
+    border-radius: 30px;
+    text-align: center;
+    place-content: center;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.3)
 }

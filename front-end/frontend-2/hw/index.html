@@ -5,44 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주은 5/25 투두리스트</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        * {
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
-    <div class="time">
-        <h2 id="clock">00:00:00</h2>
-        <script src="js/clock.js"></script>
-    </div>
+    <div class="one">
+        <div class="time">
+            <h2 id="clock">00:00:00</h2>
+        </div>
 
-    <hr>
-
-    <div class="whole">
+        
         <div class="input">
+            <h3>▼오늘의 TODO 입력📝▼</h3>
             <form id="todo-form">
-                <input type="text" placeholder="투두 항목 작성후 엔터를 눌러주세요." required/>
-                <script src="js/todo.js"></script>
+                <input type="text" placeholder="투두 항목 작성후 엔터를 눌러주세요." size=40 required/>
             </form>
         </div>
 
-    <hr>
-
         <div class="list">
+        <h3>▼오늘 한 일! 다 하면 체크를 하자!☑️▼</h3>
             <ul id="todo-list">
-                [To-Do List]
             </ul>
+        </div>
+
+        <div class="greeting">
+            <h3>▼오늘 당신에게 해주고픈 이야기..▼</h3>
+            <p id="dynamic" class="lg-text">
+            </p>
         </div>
     </div>
 
-    <hr>
-
-    <div class="greeting">
-        <p id="dynamic" class="lg-text">
-        </p>
-        <script src="js/typing.js"></script>
-    </div>
-
+    <script src="js/todo.js"></script>
+    <script src="js/typing.js"></script>
+    <script src="js/clock.js"></script>
 </body>
 </html>
