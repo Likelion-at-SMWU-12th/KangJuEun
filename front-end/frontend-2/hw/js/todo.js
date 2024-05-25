@@ -9,14 +9,14 @@ function paintToDo(newTodo) {
     span.innerText = newTodo;
     const button = document.createElement("button");
     button.innerText = "👍";
-    button.addEventListener("click", deleteTodo)
+    button.addEventListener("click", deleteToDo);
     li.appendChild(span);
     li.appendChild(button);
     toDoList.appendChild(li);
 }
 
 function handleToDoSubmit(event) {
-    event.prevenDefault();
+    event.preventDefault();
     const newTodo = toDoInput.value;
     toDoInput.value = "";
     paintToDo(newTodo);
