@@ -12,19 +12,37 @@
     </style>
 </head>
 <body>
-    <h2 id="clock">00:00:00</h2>
-    <br>
-    <form id="todo-form">
-        <input type="text" placeholder="투두 항목 작성후 엔터를 눌러주세요." required/>
-    </form>
-    <ul id="todo-list">
-        [To-Do List]
-    </ul>
-    <p id="dynamic" class="lg-text">
+    <div class="time">
+        <h2 id="clock">00:00:00</h2>
+        <script src="js/clock.js"></script>
+    </div>
 
-    </p>
-    <script src="js/clock.js"></script>
-    <script src="js/todo.js"></script>
-    <script src="js/typing.js"></script>
+    <hr>
+
+    <div class="whole">
+        <div class="input">
+            <form id="todo-form">
+                <input type="text" placeholder="투두 항목 작성후 엔터를 눌러주세요." required/>
+                <script src="js/todo.js"></script>
+            </form>
+        </div>
+
+    <hr>
+
+        <div class="list">
+            <ul id="todo-list">
+                [To-Do List]
+            </ul>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="greeting">
+        <p id="dynamic" class="lg-text">
+        </p>
+        <script src="js/typing.js"></script>
+    </div>
+
 </body>
 </html>
