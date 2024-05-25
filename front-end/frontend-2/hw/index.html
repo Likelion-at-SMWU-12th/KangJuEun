@@ -5,9 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주은 5/25 투두리스트</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h2 id="clock">00:00:00</h2>
+    <br>
+    <form id="todo-form">
+        <input type="text" placeholder="투두 항목 작성후 엔터를 눌러주세요." required/>
+    </form>
+    <ul id="todo-list">
+        [To-Do List]
+    </ul>
     <script src="js/clock.js"></script>
+    <script src="js/todo.js"></script>
 </body>
 </html>
