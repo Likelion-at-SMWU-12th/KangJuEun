@@ -27,5 +27,5 @@ function deleteToDo(event){
     li.remove();
 }
 
-toDoForm.addEventListener("submit", handleToDoSubmit);
-
+const addToDo = document.getElementById("btn");
+addToDo.addEventListener("click", handleToDoSubmit);
