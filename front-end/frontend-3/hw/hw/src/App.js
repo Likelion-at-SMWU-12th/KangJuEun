@@ -50,9 +50,9 @@ const ItemTitle = styled.p`
 `;
 
 const items = [
-  { id: 1, title: "화채", myfav: false, imgSrc: Hwa },
-  { id: 2, title: "빙수", myfav: true, imgSrc: Bing },
-  { id: 3, title: "냉면", myfav: false, imgSrc: Nang },
+  { id: 1, myfav: false, imgSrc: Hwa },
+  { id: 2, myfav: true, imgSrc: Bing },
+  { id: 3, myfav: false, imgSrc: Nang },
 ];
 
 function App() {
@@ -63,7 +63,7 @@ function App() {
         <BoardContainer>
           {items.map((item) => (
             <ItemContainer key={item.id}>
-              <ItemImage src={item.imgSrc} alt={item.title} />
+              <ItemImage src={item.imgSrc} />
               <ItemTitle myfav={item.myfav}>
                 {item.myfav ? "💛" : "🩶"}
               </ItemTitle>
