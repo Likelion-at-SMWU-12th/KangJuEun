@@ -24,6 +24,8 @@ const DetailPage = () => {
     getDetail();
   }, []);
 
+  // WritePage.js 가 아니라 DetailPage.js에 삭제 기능을 넣어놨었네요~ ^^ 하하
+
   const deleteComment = () => {
     axios
       .delete(`http://127.0.0.1:8000/entries/${id}/`)
