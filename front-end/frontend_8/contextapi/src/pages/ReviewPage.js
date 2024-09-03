@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReviewList from "../components/ReviewList";
 import { useNavigate } from "react-router";
 import styled from "styled-components";
+import { useTheme } from "../contexts/ThemeContext";
+import { themeStyle } from "../dict/dict";
 
 const ReviewPage = () => {
   const navigate = useNavigate();
-
+  const { theme } = useTheme();
+  // export default 로 익스포트할 경우 {} 필요없지만, 그냥 익스포트는 {} 필요
   return (
     <>
-      <Wrapper>
-        <h1>테마 : light</h1>
-
+      <Wrapper
+        bgColor={themeStyle[theme]["bgColor"]}
+        textColor={themeStyle[theme]["textColor"]}
+      >
+        <h1>테마 : {theme}</h1>
+        {/* context에서 받아 쓸 데이터 = useContext(사용할Context) */}
         <button onClick={() => navigate("/create")}>작성하기</button>
         <ReviewList />
       </Wrapper>
