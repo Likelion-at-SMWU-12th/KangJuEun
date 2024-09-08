@@ -2,8 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import Left from "./Left";
 import Right from "./Right";
+import { usePart } from "../contexts/PartContext";
 
-const Content = ({ part, setPart }) => {
+const Content = () => {
+  const { part, setPart } = usePart();
   return (
     <Wrapper>
       <div className="content">
