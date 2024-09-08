@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { usePart } from "../contexts/PartContext";
 
-const Left = ({ setPart }) => {
+const Left = () => {
+  const { part, setPart } = usePart();
+  console.log("현재 선택된 파트는?: ", part);
   return (
     <Wrapper>
       <button onClick={() => setPart("프론트엔드")}>프론트엔드</button>
