@@ -72,7 +72,7 @@ const useMusicStore = create((set) => ({
   playlist: [],
 
   // 액션
-  // map을 통해 todo 배열을 순회하면서
+  // map을 통해 song 배열을 순회하면서
   // 매개변수로 받은 id에 해당하는 객체를 찾아 hearted 속성을 바꿔줌.
   toggleHeart: (id) =>
     set((state) => ({
