@@ -4,6 +4,7 @@ import useMusicStore from "./store/store";
 import styled from "styled-components";
 
 function Playlist() {
+  // useMusicStore 훅으로 toggleheart, removeplaylist 액션 가져오기
   const playlist = useMusicStore((state) => state.playlist);
   const toggleHeart = useMusicStore((state) => state.toggleHeart);
   const removePlaylist = useMusicStore((state) => state.removePlaylist);

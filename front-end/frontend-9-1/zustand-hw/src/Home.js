@@ -4,6 +4,7 @@ import useMusicStore from "./store/store";
 import styled from "styled-components";
 
 function Home() {
+  // useMusicStore 훅으로 toggleheart, addplaylist 액션 가져오기
   const songs = useMusicStore((state) => state.songs);
   const toggleHeart = useMusicStore((state) => state.toggleHeart);
   const addPlaylist = useMusicStore((state) => state.addPlaylist);
@@ -102,8 +103,8 @@ const FloatButton = styled.button`
   padding: 10px 20px;
   background-color: black;
   color: white;
-  border: none;
-  border-radius: 5px;
+  border: 1px solid white;
+  border-radius: 30px;
   font-size: 16px;
   cursor: pointer;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
