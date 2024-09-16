@@ -34,14 +34,14 @@ const useMusicStore = create((set) => ({
       id: 5,
       title: "November Rain",
       artist: "Guns N' Roses",
-      albumCover: "/images/november.jpg",
+      albumCover: "/images/november.jpeg",
       length: "8:57",
     },
     {
       id: 6,
       title: "Welcome to the Jungle",
       artist: "Guns N' Roses",
-      albumCover: "/images/Welcomtothejungle.jpg",
+      albumCover: "/images/Welcometothejungle.jpg",
       length: "4:31",
     },
     {
@@ -67,22 +67,36 @@ const useMusicStore = create((set) => ({
     },
   ],
 
-  // 배열을 순회하면서, hearted(마음꾹)된 id를 찾고 이를 상태에 반영
   playlist: [],
+
+  // 하트 상태를 토글하는 함수
   toggleHeart: (id) =>
     set((state) => ({
       songs: state.songs.map((song) =>
         song.id === id ? { ...song, hearted: !song.hearted } : song
       ),
+      playlist: state.playlist.map((song) =>
+        song.id === id ? { ...song, hearted: !song.hearted } : song
+      ),
     })),
 
-  // playlist 배열에 추가할 노래를 id로 찾고,
-  // 동일한 곡이 추가시 ...song을 통해 복사되어 각각의 곡이 개별적으로 추가됨
+  // playlist에서 song의 playlistId로 특정 항목을 삭제
+  removeFromPlaylist: (playlistId) =>
+    set((state) => ({
+      playlist: state.playlist.filter((song) => song.playlistId !== playlistId),
+    })),
+
+  // 플레이리스트에 추가할 때, 고유한 playlistId 부여
   addToPlaylist: (id) =>
     set((state) => {
       const song = state.songs.find((song) => song.id === id);
       if (song) {
-        return { playlist: [...state.playlist, { ...song }] };
+        return {
+          playlist: [
+            ...state.playlist,
+            { ...song, playlistId: Date.now() }, // 고유한 playlistId 부여
+          ],
+        };
       }
     }),
 }));
