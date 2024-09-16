@@ -24,16 +24,6 @@ const useQuoteStore = create(
           quote.id === id ? { ...quote, starred: !quote.starred } : quote
         ),
       })),
-
-    // 수정 기능 추가!
-    updateQuote: (id, newQuote, newSource) =>
-      set((state) => ({
-        quotes: state.quotes.map((quote) =>
-          quote.id === id
-            ? { ...quote, quote: newQuote, source: newSource }
-            : quote
-        ),
-      })),
   }))
 );
 
