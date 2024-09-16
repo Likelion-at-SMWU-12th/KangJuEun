@@ -1,6 +1,7 @@
 import { create } from "zustand";
 
 const useMusicStore = create((set) => ({
+  // 더미데이터
   songs: [
     {
       id: 1,
@@ -67,9 +68,12 @@ const useMusicStore = create((set) => ({
     },
   ],
 
+  // playlist 초기값
   playlist: [],
 
-  // 하트 상태를 토글하는 함수
+  // 액션
+  // map을 통해 todo 배열을 순회하면서
+  // 매개변수로 받은 id에 해당하는 객체를 찾아 hearted 속성을 바꿔줌.
   toggleHeart: (id) =>
     set((state) => ({
       songs: state.songs.map((song) =>
@@ -80,25 +84,25 @@ const useMusicStore = create((set) => ({
       ),
     })),
 
-  // playlist에서 song의 playlistId로 특정 항목을 삭제
-  removeFromPlaylist: (playlistId) =>
-    set((state) => ({
-      playlist: state.playlist.filter((song) => song.playlistId !== playlistId),
-    })),
-
-  // 플레이리스트에 추가할 때, 고유한 playlistId 부여
-  addToPlaylist: (id) =>
+  // 플레이리스트에 추가할 때, 고유한 playlistId 부여합니다.
+  // 그냥 id가 아닌 이유: 같은 곡을 중복해서 넣고 싶은데, 삭제할 땐 개별적으로 삭제하고 싶어서
+  // 이후 removeFromPlaylist에서 사용할 playlistId를 만들도록 했습니다.
+  addPlaylist: (id) =>
     set((state) => {
       const song = state.songs.find((song) => song.id === id);
       if (song) {
         return {
-          playlist: [
-            ...state.playlist,
-            { ...song, playlistId: Date.now() }, // 고유한 playlistId 부여
-          ],
+          playlist: [...state.playlist, { ...song, playlistId: Date.now() }],
         };
       }
     }),
+
+  // 플레이리스트에서 곡을 삭제하는 함수
+  // 같은 곡을 중복으로 담을 수 있으나,
+  removePlaylist: (playlistId) =>
+    set((state) => ({
+      playlist: state.playlist.filter((song) => song.playlistId !== playlistId),
+    })),
 }));
 
 export default useMusicStore;

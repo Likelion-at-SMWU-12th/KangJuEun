@@ -6,14 +6,12 @@ import styled from "styled-components";
 function Home() {
   const songs = useMusicStore((state) => state.songs);
   const toggleHeart = useMusicStore((state) => state.toggleHeart);
-  const addToPlaylist = useMusicStore((state) => state.addToPlaylist);
+  const addPlaylist = useMusicStore((state) => state.addPlaylist);
   const navigate = useNavigate();
 
   return (
     <Divdiv>
-      <h1 style={{ color: "white", textAlign: "center" }}>
-        좋아하는 곡을 담아봐...
-      </h1>
+      <h1 style={{ textAlign: "center" }}>좋아하는 곡을 담아봐...</h1>
       <GridContainer>
         {songs.map((song) => (
           <SongCard key={song.id}>
@@ -26,7 +24,7 @@ function Home() {
             <Hbtn onClick={() => toggleHeart(song.id)}>
               {song.hearted ? "❤️" : "♡"}
             </Hbtn>
-            <Button onClick={() => addToPlaylist(song.id)}>담기</Button>
+            <Button onClick={() => addPlaylist(song.id)}>담기</Button>
           </SongCard>
         ))}
       </GridContainer>
@@ -53,6 +51,7 @@ const GridContainer = styled.div`
 
 const SongCard = styled.div`
   background-color: #fff;
+  color: black;
   border-radius: 20px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px;

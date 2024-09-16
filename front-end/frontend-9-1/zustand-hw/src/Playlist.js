@@ -1,43 +1,57 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useMusicStore from "./store/store";
 import styled from "styled-components";
 
 function Playlist() {
   const playlist = useMusicStore((state) => state.playlist);
   const toggleHeart = useMusicStore((state) => state.toggleHeart);
-  const removeFromPlaylist = useMusicStore((state) => state.removeFromPlaylist);
+  const removePlaylist = useMusicStore((state) => state.removePlaylist);
 
   return (
-    <Container>
-      <h1>2024년 9월 Playlist💿</h1>
-      {playlist.map((song) => (
-        <PlaylistItem key={song.playlistId}>
-          {" "}
-          {/* playlistId로 key 설정 */}
-          <AlbumCover src={song.albumCover} alt={song.title} />
-          <SongDetails>
-            <h3>{song.title}</h3>
-            <p>{song.artist}</p>
-          </SongDetails>
-          <HeartButton onClick={() => toggleHeart(song.id)}>
-            {song.hearted ? "❤️" : "♡"}
-          </HeartButton>
-          <DeleteButton onClick={() => removeFromPlaylist(song.playlistId)}>
-            삭제
-          </DeleteButton>
-        </PlaylistItem>
-      ))}
-    </Container>
+    <>
+      <StyledLink to="/">&nbsp;&nbsp;&nbsp;&nbsp;🏠</StyledLink>
+      <Container>
+        <h1 style={{ textAlign: "center", marginTop: "50px" }}>
+          2024년 9월 Playlist💿
+        </h1>
+        {playlist.map((song) => (
+          <PlaylistItem key={song.playlistId}>
+            {" "}
+            <AlbumCover src={song.albumCover} alt={song.title} />
+            <SongDetails>
+              <h3>{song.title}</h3>
+              <p>{song.artist}</p>
+            </SongDetails>
+            <HeartButton onClick={() => toggleHeart(song.id)}>
+              {song.hearted ? "❤️" : "♡"}
+            </HeartButton>
+            <DeleteButton onClick={() => removePlaylist(song.playlistId)}>
+              삭제
+            </DeleteButton>
+          </PlaylistItem>
+        ))}
+      </Container>
+    </>
   );
 }
 
 export default Playlist;
 
+const StyledLink = styled(Link)`
+  position: fixed;
+  top: 20px;
+  border: none;
+  font-size: 30px;
+  text-decoration: none;
+`;
 const Container = styled.div`
   padding: 20px;
+  background: black;
 `;
 
 const PlaylistItem = styled.div`
+  color: white;
   display: flex;
   align-items: center;
   padding: 10px;
