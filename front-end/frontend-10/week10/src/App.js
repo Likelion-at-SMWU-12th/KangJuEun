@@ -15,6 +15,7 @@ function App() {
             <Route path="/greeting" element={<Greeting />} />
           </Routes>
         </BrowserRouter>
+        {/* 라우팅은 잊지 않기... *^^* */}
       </div>
     </div>
   );
